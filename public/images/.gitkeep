@@ -1,0 +1,26 @@
+# Placeholder Images Directory
+
+Place your product images, collection images, and blog images here.
+
+The app will gracefully handle missing images by showing SVG placeholders.
+
+Expected images:
+- placeholder-rose.jpg
+- placeholder-sunflower.jpg
+- placeholder-lilies.jpg
+- placeholder-tulip.jpg
+- placeholder-orchid.jpg
+- placeholder-lavender.jpg
+- placeholder-mixed.jpg
+- placeholder-carnation.jpg
+- placeholder-anniversary.jpg
+- placeholder-birthday.jpg
+- placeholder-wedding.jpg
+- placeholder-spring.jpg
+- placeholder-gift.jpg
+- placeholder-relaxation.jpg
+- placeholder-blog-1.jpg
+- placeholder-blog-2.jpg
+- placeholder-blog-3.jpg
+- placeholder-blog-4.jpg
+
