@@ -212,7 +212,7 @@ const Product = () => {
                   </div>
                   <div className="p-4">
                     <h3 className="font-semibold text-gray-900 mb-2">{relatedProduct.title}</h3>
-                    <p className="text-lg font-bold text-green-600">${relatedProduct.price}</p>
+                    <p className="text-lg font-semibold text-gray-900">${relatedProduct.price}</p>
                   </div>
                 </div>
               ))}
