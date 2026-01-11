@@ -145,50 +145,50 @@ const Collection = () => {
             <div className="flex flex-wrap gap-2">
               <button
                 onClick={() => handleOccasionChange(null)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 transform ${
                   !occasionParam
-                    ? 'bg-green-600 text-white'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                    ? 'bg-green-600 text-white shadow-md scale-105'
+                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300 hover:scale-105 active:scale-95'
                 }`}
               >
                 All
               </button>
               <button
                 onClick={() => handleOccasionChange('anniversary')}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 transform ${
                   occasionParam === 'anniversary'
-                    ? 'bg-green-600 text-white'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                    ? 'bg-green-600 text-white shadow-md scale-105'
+                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300 hover:scale-105 active:scale-95'
                 }`}
               >
                 Anniversary
               </button>
               <button
                 onClick={() => handleOccasionChange('birthday')}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 transform ${
                   occasionParam === 'birthday'
-                    ? 'bg-green-600 text-white'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                    ? 'bg-green-600 text-white shadow-md scale-105'
+                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300 hover:scale-105 active:scale-95'
                 }`}
               >
                 Birthday
               </button>
               <button
                 onClick={() => handleOccasionChange('wedding')}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 transform ${
                   occasionParam === 'wedding'
-                    ? 'bg-green-600 text-white'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                    ? 'bg-green-600 text-white shadow-md scale-105'
+                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300 hover:scale-105 active:scale-95'
                 }`}
               >
                 Wedding
               </button>
               <button
                 onClick={() => handleOccasionChange('gift')}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 transform ${
                   occasionParam === 'gift'
-                    ? 'bg-green-600 text-white'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                    ? 'bg-green-600 text-white shadow-md scale-105'
+                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300 hover:scale-105 active:scale-95'
                 }`}
               >
                 Gift

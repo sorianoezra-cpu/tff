@@ -32,12 +32,12 @@ const BlogCarousel = () => {
             >
               {posts.map((post) => (
                 <div key={post.id} className="min-w-full px-2">
-                  <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                    <div className="aspect-video bg-gray-100 overflow-hidden">
+                  <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div className="aspect-video bg-gray-100 overflow-hidden group">
                       <img
                         src={post.image}
                         alt={post.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         onError={(e) => {
                           e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQ1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjQ1MCIgZmlsbD0iI2U1ZTdlYiIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM5Y2EzYWYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5CbG9nIEltYWdlPC90ZXh0Pjwvc3ZnPg=='
                         }}
@@ -52,10 +52,10 @@ const BlogCarousel = () => {
                       <p className="text-gray-600 mb-4 line-clamp-2">{post.excerpt}</p>
                       <Link
                         to={`/blog/${post.slug}`}
-                        className="inline-flex items-center text-green-600 hover:text-green-700 font-medium transition-colors"
+                        className="inline-flex items-center text-green-600 hover:text-green-700 font-medium transition-all duration-300 group/link"
                       >
                         Read More
-                        <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="ml-2 w-4 h-4 transform group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                       </Link>

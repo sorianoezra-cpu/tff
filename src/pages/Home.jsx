@@ -21,7 +21,7 @@ const Home = () => {
             <p className="text-xl md:text-2xl mb-8 text-green-50">
               Beautiful arrangements delivered to your door. Making every moment special with nature's finest blooms.
             </p>
-            <Link to="/collection" className="inline-block bg-white text-green-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-50 transition-colors shadow-lg">
+            <Link to="/collection" className="inline-block bg-white text-green-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95">
               Shop Now
             </Link>
           </div>
@@ -58,20 +58,20 @@ const Home = () => {
               <Link
                 key={collection.id}
                 to={`/collection?occasion=${collection.slug}`}
-                className="group relative aspect-square bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300"
+                className="group relative aspect-square bg-white rounded-lg shadow-md overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
               >
                 <div className="relative w-full h-full bg-gradient-to-br from-green-400 to-green-600">
                   <img
                     src={collection.image}
                     alt={collection.name}
-                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
                     onError={(e) => {
                       e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzM4YTk2MyIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+Q29sbGVjdGlvbjwvdGV4dD48L3N2Zz4='
                     }}
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-20 transition-all"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent group-hover:from-black/50 transition-all duration-300"></div>
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <h3 className="text-white font-bold text-lg md:text-xl text-center px-4 group-hover:scale-110 transition-transform">
+                    <h3 className="text-white font-bold text-lg md:text-xl text-center px-4 group-hover:scale-110 transition-transform duration-300 drop-shadow-lg">
                       {collection.name}
                     </h3>
                   </div>

@@ -18,7 +18,7 @@ const CartDrawer = () => {
 
       {/* Drawer */}
       <div
-        className="fixed right-0 top-0 h-full w-full max-w-md bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out overflow-y-auto"
+        className="fixed right-0 top-0 h-full w-full max-w-md bg-white shadow-2xl z-50 transform translate-x-0 transition-transform duration-300 ease-out overflow-y-auto"
         role="dialog"
         aria-modal="true"
         aria-labelledby="cart-drawer-title"
@@ -31,7 +31,7 @@ const CartDrawer = () => {
             </h2>
             <button
               onClick={() => setIsCartOpen(false)}
-              className="text-gray-400 hover:text-gray-600 transition-colors"
+              className="text-gray-400 hover:text-gray-600 transition-all duration-300 transform hover:rotate-90 hover:scale-110 active:scale-95"
               aria-label="Close cart"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

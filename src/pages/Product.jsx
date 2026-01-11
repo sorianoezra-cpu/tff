@@ -75,11 +75,11 @@ const Product = () => {
         <div className="bg-white rounded-lg shadow-md overflow-hidden mb-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-6 md:p-8">
             {/* Product Image */}
-            <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
+            <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden group cursor-zoom-in">
               <img
                 src={product.image}
                 alt={product.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 onError={(e) => {
                   e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0iI2U1ZTdlYiIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzIiIGZpbGw9IiM5Y2EzYWYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5Qcm9kdWN0IEltYWdlPC90ZXh0Pjwvc3ZnPg=='
                 }}
@@ -164,9 +164,9 @@ const Product = () => {
               <button
                 onClick={handleAddToCart}
                 disabled={!selectedVariant || !selectedVariant.inStock}
-                className={`w-full py-4 rounded-lg font-bold text-lg transition-colors ${
+                className={`w-full py-4 rounded-lg font-bold text-lg transition-all duration-300 transform ${
                   selectedVariant && selectedVariant.inStock
-                    ? 'bg-green-600 text-white hover:bg-green-700'
+                    ? 'bg-green-600 text-white hover:bg-green-700 hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl'
                     : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                 }`}
                 aria-label={`Add ${quantity} ${product.title} to cart`}
