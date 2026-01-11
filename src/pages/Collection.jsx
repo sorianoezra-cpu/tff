@@ -69,7 +69,7 @@ const Collection = () => {
         <nav className="mb-6 text-sm text-gray-600" aria-label="Breadcrumb">
           <ol className="flex items-center space-x-2">
             <li>
-              <Link to="/" className="hover:text-green-600 transition-colors">Home</Link>
+              <Link to="/" className="hover:text-gray-900 transition-colors">Home</Link>
             </li>
             <li>
               <span className="mx-2">/</span>

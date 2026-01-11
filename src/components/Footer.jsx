@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-bold text-white mb-4">🌸 Flower Shop</h3>
+            <h3 className="text-2xl font-semibold text-white mb-4 tracking-tight">Flower Shop</h3>
             <p className="text-sm mb-4">
               Fresh flowers and arrangements delivered to your door. Making every moment special.
             </p>
@@ -41,16 +41,12 @@ const Footer = () => {
               <li>
                 <Link to="/collection" className="hover:text-white transition-colors">Shop All</Link>
               </li>
-              {collections.slice(0, 3).map((collection) => (
-                <li key={collection.id}>
-                  <Link
-                    to={`/collection?occasion=${collection.slug}`}
-                    className="hover:text-white transition-colors"
-                  >
-                    {collection.name}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link to="/about" className="hover:text-white transition-colors">About</Link>
+              </li>
+              <li>
+                <Link to="/contact" className="hover:text-white transition-colors">Contact</Link>
+              </li>
             </ul>
           </div>
 

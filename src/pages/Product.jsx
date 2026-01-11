@@ -57,13 +57,13 @@ const Product = () => {
         <nav className="mb-6 text-sm text-gray-600" aria-label="Breadcrumb">
           <ol className="flex items-center space-x-2">
             <li>
-              <Link to="/" className="hover:text-green-600 transition-colors">Home</Link>
+              <Link to="/" className="hover:text-gray-900 transition-colors">Home</Link>
             </li>
             <li>
               <span className="mx-2">/</span>
             </li>
             <li>
-              <Link to="/collection" className="hover:text-green-600 transition-colors">Shop</Link>
+              <Link to="/collection" className="hover:text-gray-900 transition-colors">Shop</Link>
             </li>
             <li>
               <span className="mx-2">/</span>
@@ -90,7 +90,7 @@ const Product = () => {
             <div>
               <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{product.title}</h1>
               <div className="flex items-center space-x-4 mb-6">
-                <span className="text-3xl font-bold text-green-600">${selectedVariant?.price || product.price}</span>
+                <span className="text-3xl font-semibold text-gray-900">${selectedVariant?.price || product.price}</span>
                 {product.originalPrice && (
                   <span className="text-xl text-gray-400 line-through">${product.originalPrice}</span>
                 )}
@@ -115,7 +115,7 @@ const Product = () => {
                         disabled={!variant.inStock}
                         className={`w-full text-left px-4 py-3 rounded-lg border-2 transition-all ${
                           selectedVariant?.id === variant.id
-                            ? 'border-green-600 bg-green-50'
+                            ? 'border-black bg-gray-50'
                             : 'border-gray-300 hover:border-gray-400'
                         } ${!variant.inStock ? 'opacity-50 cursor-not-allowed' : ''}`}
                       >
@@ -166,7 +166,7 @@ const Product = () => {
                 disabled={!selectedVariant || !selectedVariant.inStock}
                 className={`w-full py-4 rounded-lg font-bold text-lg transition-all duration-300 transform ${
                   selectedVariant && selectedVariant.inStock
-                    ? 'bg-green-600 text-white hover:bg-green-700 hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl'
+                    ? 'bg-black text-white hover:bg-gray-800 hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl rounded-full'
                     : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                 }`}
                 aria-label={`Add ${quantity} ${product.title} to cart`}
@@ -176,7 +176,7 @@ const Product = () => {
 
               {/* Stock Status */}
               {selectedVariant && selectedVariant.inStock && (
-                <p className="text-green-600 text-sm mt-4 flex items-center">
+                <p className="text-gray-700 text-sm mt-4 flex items-center">
                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>

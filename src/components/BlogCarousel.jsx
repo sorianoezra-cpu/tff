@@ -45,14 +45,14 @@ const BlogCarousel = () => {
                     </div>
                     <div className="p-6">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-sm text-green-600 font-medium">{post.category}</span>
+                        <span className="text-sm text-gray-700 font-medium">{post.category}</span>
                         <span className="text-sm text-gray-500">{new Date(post.date).toLocaleDateString()}</span>
                       </div>
                       <h3 className="text-xl font-bold text-gray-900 mb-2">{post.title}</h3>
                       <p className="text-gray-600 mb-4 line-clamp-2">{post.excerpt}</p>
                       <Link
                         to={`/blog/${post.slug}`}
-                        className="inline-flex items-center text-green-600 hover:text-green-700 font-medium transition-all duration-300 group/link"
+                        className="inline-flex items-center text-gray-900 hover:text-gray-600 font-medium transition-all duration-300 group/link"
                       >
                         Read More
                         <svg className="ml-2 w-4 h-4 transform group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -93,7 +93,7 @@ const BlogCarousel = () => {
                 key={index}
                 onClick={() => scrollToIndex(index)}
                 className={`w-3 h-3 rounded-full transition-all ${
-                  index === currentIndex ? 'bg-green-600 w-8' : 'bg-gray-300 hover:bg-gray-400'
+                  index === currentIndex ? 'bg-black w-8' : 'bg-gray-300 hover:bg-gray-400'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />

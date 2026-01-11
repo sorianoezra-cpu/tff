@@ -121,6 +121,12 @@ const Header = () => {
             <Link to="/collection" className="text-gray-900 hover:text-gray-600 transition-colors text-sm font-medium">
               Shop
             </Link>
+            <Link to="/about" className="text-gray-900 hover:text-gray-600 transition-colors text-sm font-medium">
+              About
+            </Link>
+            <Link to="/contact" className="text-gray-900 hover:text-gray-600 transition-colors text-sm font-medium">
+              Contact
+            </Link>
           </div>
 
           {/* Search, Cart, Mobile Menu */}
@@ -237,6 +243,20 @@ const Header = () => {
               >
                 Shop All
               </Link>
+              <Link
+                to="/about"
+                className="px-4 py-2 text-gray-900 hover:bg-gray-50 rounded transition-colors text-sm"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About
+              </Link>
+              <Link
+                to="/contact"
+                className="px-4 py-2 text-gray-900 hover:bg-gray-50 rounded transition-colors text-sm"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact
+              </Link>
               {collections.map((collection) => (
                 <Link
                   key={collection.id}
@@ -260,7 +280,7 @@ const Header = () => {
                 placeholder="Search products..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full px-4 py-2 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                className="w-full px-4 py-2 pr-10 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent bg-gray-50 text-sm"
                 aria-label="Search products"
               />
               <button
