@@ -59,31 +59,31 @@ const Header = () => {
   }
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-md" role="banner">
+    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100" role="banner">
       <AnnouncementBar />
       <nav className="container mx-auto px-4 py-4" aria-label="Main navigation">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between max-w-7xl mx-auto">
           {/* Logo */}
-          <Link to="/" className="text-2xl font-bold text-green-600 hover:text-green-700 transition-colors">
-            🌸 Flower Shop
+          <Link to="/" className="text-xl font-semibold text-gray-900 hover:text-gray-600 transition-colors tracking-tight">
+            Flower Shop
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
-            <Link to="/" className="text-gray-700 hover:text-green-600 transition-colors">
+          <div className="hidden md:flex items-center space-x-8">
+            <Link to="/" className="text-gray-900 hover:text-gray-600 transition-colors text-sm font-medium">
               Home
             </Link>
             <div className="relative" ref={dropdownRef}>
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="text-gray-700 hover:text-green-600 transition-colors flex items-center"
+                className="text-gray-900 hover:text-gray-600 transition-colors flex items-center text-sm font-medium"
                 aria-expanded={isDropdownOpen}
                 aria-haspopup="true"
                 aria-label="Collections menu"
               >
                 Collections
                 <svg
-                  className={`ml-1 w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
+                  className={`ml-1 w-3 h-3 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -93,14 +93,14 @@ const Header = () => {
               </button>
               {isDropdownOpen && (
                 <div
-                  className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg py-2 border border-gray-200"
+                  className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-xl py-2 border border-gray-100"
                   role="menu"
                 >
                   {collections.map((collection) => (
                     <Link
                       key={collection.id}
                       to={`/collection?occasion=${collection.slug}`}
-                      className="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600 transition-colors"
+                      className="block px-4 py-2.5 text-gray-900 hover:bg-gray-50 transition-colors text-sm"
                       role="menuitem"
                       onClick={() => setIsDropdownOpen(false)}
                     >
@@ -109,7 +109,7 @@ const Header = () => {
                   ))}
                   <Link
                     to="/collection"
-                    className="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600 transition-colors border-t border-gray-200 mt-2"
+                    className="block px-4 py-2.5 text-gray-900 hover:bg-gray-50 transition-colors border-t border-gray-100 mt-2 text-sm"
                     role="menuitem"
                     onClick={() => setIsDropdownOpen(false)}
                   >
@@ -118,7 +118,7 @@ const Header = () => {
                 </div>
               )}
             </div>
-            <Link to="/collection" className="text-gray-700 hover:text-green-600 transition-colors">
+            <Link to="/collection" className="text-gray-900 hover:text-gray-600 transition-colors text-sm font-medium">
               Shop
             </Link>
           </div>
@@ -133,12 +133,12 @@ const Header = () => {
                   placeholder="Search..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="hidden md:block w-64 px-4 py-2 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  className="hidden md:block w-64 px-4 py-2 pr-10 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent bg-gray-50 text-sm"
                   aria-label="Search products"
                 />
                 <button
                   type="submit"
-                  className="hidden md:block absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-green-600"
+                  className="hidden md:block absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
                   aria-label="Submit search"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -149,7 +149,7 @@ const Header = () => {
               {/* Mobile Search Button */}
               <button
                 onClick={() => setIsSearchOpen(!isSearchOpen)}
-                className="md:hidden text-gray-700 hover:text-green-600 transition-colors"
+                className="md:hidden text-gray-900 hover:text-gray-600 transition-colors"
                 aria-label="Open search"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -163,7 +163,7 @@ const Header = () => {
                     <button
                       key={product.id}
                       onClick={() => handleProductClick(product.slug)}
-                      className="w-full text-left px-4 py-3 hover:bg-green-50 transition-colors border-b border-gray-100 last:border-b-0"
+                      className="w-full text-left px-4 py-3 hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-b-0"
                     >
                       <div className="flex items-center space-x-3">
                         <img
@@ -188,14 +188,14 @@ const Header = () => {
             {/* Cart */}
             <button
               onClick={() => setIsCartOpen(true)}
-              className="relative text-gray-700 hover:text-green-600 transition-colors"
+              className="relative text-gray-900 hover:text-gray-600 transition-colors"
               aria-label={`Shopping cart with ${cartItemCount} items`}
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
               </svg>
               {cartItemCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-green-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">
+                <span className="absolute -top-2 -right-2 bg-black text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-medium">
                   {cartItemCount > 9 ? '9+' : cartItemCount}
                 </span>
               )}
@@ -204,7 +204,7 @@ const Header = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden text-gray-700 hover:text-green-600 transition-colors"
+              className="md:hidden text-gray-900 hover:text-gray-600 transition-colors"
               aria-label="Toggle menu"
               aria-expanded={isMenuOpen}
             >
@@ -225,14 +225,14 @@ const Header = () => {
             <div className="flex flex-col space-y-2 pt-4">
               <Link
                 to="/"
-                className="px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600 rounded transition-colors"
+                className="px-4 py-2 text-gray-900 hover:bg-gray-50 rounded transition-colors text-sm"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </Link>
               <Link
                 to="/collection"
-                className="px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600 rounded transition-colors"
+                className="px-4 py-2 text-gray-900 hover:bg-gray-50 rounded transition-colors text-sm"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Shop All
@@ -241,7 +241,7 @@ const Header = () => {
                 <Link
                   key={collection.id}
                   to={`/collection?occasion=${collection.slug}`}
-                  className="px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600 rounded transition-colors"
+                  className="px-4 py-2 text-gray-900 hover:bg-gray-50 rounded transition-colors text-sm"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {collection.name}
@@ -265,7 +265,7 @@ const Header = () => {
               />
               <button
                 type="submit"
-                className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-green-600"
+                className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
                 aria-label="Submit search"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

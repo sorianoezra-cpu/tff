@@ -8,17 +8,26 @@
   }
   
   body {
-    @apply font-sans antialiased;
+    @apply font-sans antialiased bg-white text-gray-900;
+    font-feature-settings: "kern" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+    letter-spacing: -0.02em;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-all duration-300 font-medium shadow-md hover:shadow-lg transform hover:scale-105 active:scale-95;
+    @apply bg-black text-white px-8 py-3.5 rounded-full hover:bg-gray-800 transition-all duration-200 font-medium text-sm tracking-wide;
   }
   
   .btn-secondary {
-    @apply bg-gray-200 text-gray-800 px-6 py-3 rounded-lg hover:bg-gray-300 transition-all duration-300 font-medium shadow hover:shadow-md transform hover:scale-105 active:scale-95;
+    @apply bg-gray-100 text-gray-900 px-8 py-3.5 rounded-full hover:bg-gray-200 transition-all duration-200 font-medium text-sm tracking-wide;
   }
 }
 

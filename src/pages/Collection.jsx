@@ -75,7 +75,7 @@ const Collection = () => {
               <span className="mx-2">/</span>
             </li>
             <li>
-              <Link to="/collection" className="hover:text-green-600 transition-colors">Shop</Link>
+              <Link to="/collection" className="hover:text-gray-900 transition-colors">Shop</Link>
             </li>
             {collection && (
               <>
@@ -89,15 +89,15 @@ const Collection = () => {
         </nav>
 
         {/* Page Title */}
-        <h1 className="text-3xl md:text-4xl font-bold mb-8 text-gray-900">
+        <h1 className="text-4xl md:text-5xl font-semibold mb-4 text-gray-900 tracking-tight">
           {collection ? collection.name : 'Shop All Flowers'}
         </h1>
         {collection && (
-          <p className="text-gray-600 mb-8 max-w-2xl">{collection.description}</p>
+          <p className="text-gray-600 mb-12 max-w-2xl text-lg">{collection.description}</p>
         )}
 
         {/* Filters and Search */}
-        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+        <div className="bg-white rounded-2xl border border-gray-100 p-6 mb-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Search */}
             <div className="md:col-span-2">
@@ -107,12 +107,12 @@ const Collection = () => {
                   placeholder="Search products..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full px-4 py-2 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  className="w-full px-4 py-2 pr-10 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent bg-gray-50 text-sm"
                   aria-label="Search products"
                 />
                 <button
                   type="submit"
-                  className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-green-600 transition-colors"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
                   aria-label="Submit search"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -127,7 +127,7 @@ const Collection = () => {
               <select
                 value={priceFilter}
                 onChange={(e) => setPriceFilter(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent bg-gray-50 text-sm"
                 aria-label="Filter by price"
               >
                 <option value="all">All Prices</option>
@@ -145,10 +145,10 @@ const Collection = () => {
             <div className="flex flex-wrap gap-2">
               <button
                 onClick={() => handleOccasionChange(null)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 transform ${
+                className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${
                   !occasionParam
-                    ? 'bg-green-600 text-white shadow-md scale-105'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300 hover:scale-105 active:scale-95'
+                    ? 'bg-black text-white'
+                    : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
                 }`}
               >
                 All
@@ -198,7 +198,7 @@ const Collection = () => {
         </div>
 
         {/* Results Count */}
-        <p className="text-gray-600 mb-6">
+        <p className="text-gray-600 mb-8 text-sm">
           Showing {filteredProducts.length} {filteredProducts.length === 1 ? 'product' : 'products'}
         </p>
 

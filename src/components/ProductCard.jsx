@@ -16,43 +16,41 @@ const ProductCard = ({ product }) => {
   }
 
   return (
-    <div className="group relative bg-white rounded-lg shadow-md overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+    <div className="group relative bg-white">
       <Link to={`/product/${product.slug}`} className="block">
-        <div className="relative aspect-square bg-gray-100 overflow-hidden">
+        <div className="relative aspect-square bg-gray-50 rounded-2xl overflow-hidden mb-4">
           <img
             src={product.image}
             alt={product.title}
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
+            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
             onError={(e) => {
               e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI2U1ZTdlYiIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM5Y2EzYWYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5Qcm9kdWN0IEltYWdlPC90ZXh0Pjwvc3ZnPg=='
             }}
           />
-          {/* Hover overlay */}
-          <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-opacity duration-300"></div>
           {product.originalPrice && (
-            <span className="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded shadow-lg animate-pulse">
+            <span className="absolute top-3 left-3 bg-black text-white text-xs font-medium px-3 py-1 rounded-full">
               Sale
             </span>
           )}
         </div>
-        <div className="p-4">
-          <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-green-600 transition-colors">{product.title}</h3>
-          <div className="flex items-center space-x-2 mb-3">
-            <span className="text-xl font-bold text-green-600">${product.price}</span>
+        <div className="text-center">
+          <h3 className="text-lg font-medium text-gray-900 mb-2 line-clamp-2 group-hover:text-gray-600 transition-colors">{product.title}</h3>
+          <div className="flex items-center justify-center space-x-2 mb-4">
+            <span className="text-xl font-semibold text-gray-900">${product.price}</span>
             {product.originalPrice && (
               <span className="text-sm text-gray-400 line-through">${product.originalPrice}</span>
             )}
           </div>
         </div>
       </Link>
-      <div className="px-4 pb-4">
+      <div>
         <button
           onClick={handleQuickAddWithFeedback}
           disabled={isAdding}
-          className={`w-full text-white py-2 rounded-lg font-medium transition-all duration-300 transform ${
+          className={`w-full text-white py-3 rounded-full font-medium transition-all duration-200 ${
             isAdding
-              ? 'bg-green-500 scale-95 cursor-not-allowed'
-              : 'bg-green-600 hover:bg-green-700 hover:scale-105 active:scale-95 shadow-md hover:shadow-lg'
+              ? 'bg-gray-400 cursor-not-allowed'
+              : 'bg-black hover:bg-gray-800'
           }`}
           aria-label={`Add ${product.title} to cart`}
         >
@@ -65,7 +63,7 @@ const ProductCard = ({ product }) => {
               Added!
             </span>
           ) : (
-            'Quick Add'
+            'Add to Cart'
           )}
         </button>
       </div>

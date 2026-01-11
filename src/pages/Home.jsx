@@ -10,71 +10,76 @@ const Home = () => {
   const bestSellers = products.slice(0, 4)
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Banner */}
-      <section className="relative bg-gradient-to-r from-green-600 to-green-400 text-white py-20 md:py-32" aria-labelledby="hero-heading">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl">
-            <h1 id="hero-heading" className="text-4xl md:text-6xl font-bold mb-6">
-              Fresh Flowers for Every Occasion
+    <div className="min-h-screen bg-white">
+      {/* Hero Banner - Apple Style */}
+      <section className="relative bg-white py-24 md:py-40" aria-labelledby="hero-heading">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center">
+            <h1 id="hero-heading" className="text-5xl md:text-7xl lg:text-8xl font-semibold mb-6 tracking-tight text-gray-900">
+              Fresh Flowers<br />for Every Occasion
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-green-50">
+            <p className="text-xl md:text-2xl mb-12 text-gray-600 max-w-2xl mx-auto font-light">
               Beautiful arrangements delivered to your door. Making every moment special with nature's finest blooms.
             </p>
-            <Link to="/collection" className="inline-block bg-white text-green-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95">
-              Shop Now
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/collection" className="btn-primary inline-block">
+                Shop Now
+              </Link>
+              <Link to="/collection" className="btn-secondary inline-block">
+                Browse Collections
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Shop Best Sellers */}
-      <section className="py-16 bg-white" aria-labelledby="best-sellers-heading">
-        <div className="container mx-auto px-4">
-          <h2 id="best-sellers-heading" className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">
+      {/* Shop Best Sellers - Apple Style */}
+      <section className="py-24 md:py-32 bg-white" aria-labelledby="best-sellers-heading">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <h2 id="best-sellers-heading" className="text-4xl md:text-5xl font-semibold text-center mb-4 text-gray-900 tracking-tight">
             Shop Best Sellers
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <p className="text-center text-gray-600 mb-16 text-lg">Our most loved arrangements</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {bestSellers.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
-          <div className="text-center mt-8">
-            <Link to="/collection" className="btn-primary inline-block">
-              View All Products
+          <div className="text-center mt-16">
+            <Link to="/collection" className="text-gray-900 hover:text-gray-600 text-lg font-medium transition-colors">
+              View All Products →
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Shop By Occasion */}
-      <section className="py-16 bg-gray-50" aria-labelledby="occasion-heading">
-        <div className="container mx-auto px-4">
-          <h2 id="occasion-heading" className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">
+      {/* Shop By Occasion - Apple Style */}
+      <section className="py-24 md:py-32 bg-gray-50" aria-labelledby="occasion-heading">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <h2 id="occasion-heading" className="text-4xl md:text-5xl font-semibold text-center mb-4 text-gray-900 tracking-tight">
             Shop By Occasion
           </h2>
+          <p className="text-center text-gray-600 mb-16 text-lg">Find the perfect arrangement</p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {collections.map((collection) => (
               <Link
                 key={collection.id}
                 to={`/collection?occasion=${collection.slug}`}
-                className="group relative aspect-square bg-white rounded-lg shadow-md overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                className="group relative aspect-square bg-white rounded-2xl overflow-hidden transition-all duration-300"
               >
-                <div className="relative w-full h-full bg-gradient-to-br from-green-400 to-green-600">
-                  <img
-                    src={collection.image}
-                    alt={collection.name}
-                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
-                    onError={(e) => {
-                      e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzM4YTk2MyIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+Q29sbGVjdGlvbjwvdGV4dD48L3N2Zz4='
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent group-hover:from-black/50 transition-all duration-300"></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <h3 className="text-white font-bold text-lg md:text-xl text-center px-4 group-hover:scale-110 transition-transform duration-300 drop-shadow-lg">
-                      {collection.name}
-                    </h3>
-                  </div>
+                <img
+                  src={collection.image}
+                  alt={collection.name}
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                  onError={(e) => {
+                    e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzM4YTk2MyIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+Q29sbGVjdGlvbjwvdGV4dD48L3N2Zz4='
+                  }}
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <h3 className="text-white font-semibold text-base text-center drop-shadow-lg">
+                    {collection.name}
+                  </h3>
                 </div>
               </Link>
             ))}
