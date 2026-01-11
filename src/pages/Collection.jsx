@@ -140,8 +140,8 @@ const Collection = () => {
           </div>
 
           {/* Occasion Filter */}
-          <div className="mt-4 pt-4 border-t border-gray-200">
-            <label className="block text-sm font-medium text-gray-700 mb-2">Occasion:</label>
+          <div className="mt-6 pt-6 border-t border-gray-100">
+            <label className="block text-sm font-medium text-gray-900 mb-3">Occasion:</label>
             <div className="flex flex-wrap gap-2">
               <button
                 onClick={() => handleOccasionChange(null)}
@@ -155,40 +155,40 @@ const Collection = () => {
               </button>
               <button
                 onClick={() => handleOccasionChange('anniversary')}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 transform ${
+                className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${
                   occasionParam === 'anniversary'
-                    ? 'bg-green-600 text-white shadow-md scale-105'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300 hover:scale-105 active:scale-95'
+                    ? 'bg-black text-white'
+                    : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
                 }`}
               >
                 Anniversary
               </button>
               <button
                 onClick={() => handleOccasionChange('birthday')}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 transform ${
+                className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${
                   occasionParam === 'birthday'
-                    ? 'bg-green-600 text-white shadow-md scale-105'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300 hover:scale-105 active:scale-95'
+                    ? 'bg-black text-white'
+                    : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
                 }`}
               >
                 Birthday
               </button>
               <button
                 onClick={() => handleOccasionChange('wedding')}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 transform ${
+                className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${
                   occasionParam === 'wedding'
-                    ? 'bg-green-600 text-white shadow-md scale-105'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300 hover:scale-105 active:scale-95'
+                    ? 'bg-black text-white'
+                    : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
                 }`}
               >
                 Wedding
               </button>
               <button
                 onClick={() => handleOccasionChange('gift')}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 transform ${
+                className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${
                   occasionParam === 'gift'
-                    ? 'bg-green-600 text-white shadow-md scale-105'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300 hover:scale-105 active:scale-95'
+                    ? 'bg-black text-white'
+                    : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
                 }`}
               >
                 Gift
